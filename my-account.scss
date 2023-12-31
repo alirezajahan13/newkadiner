@@ -1,0 +1,151 @@
+/*!
+Theme Name: newkadiner
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>newkadiner</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: newkadiner
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+newkadiner is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import 'sass/variables';
+@import 'sass/breakpoints';
+@import 'sass/source';
+
+.woocommerce-account{
+    .woocommerce-form , .entry-header{
+        background-color: #fff !important;
+        padding: 20px !important;
+        border-radius: 8px !important;
+        border: none !important;
+    }
+    .entry-header{
+        margin: 30px 0 !important;
+        h1{
+            font-size: 16px !important;
+            font-weight: 700 !important;
+        }
+    }
+    .woocommerce-button{
+        background-color: #fdcf00 !important;
+        border-radius: 8px !important;
+        padding: 10px 30px !important;
+        color: #fff !important;
+        font-weight: 500 !important;
+    }
+    .woocommerce-form-login__rememberme{
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        input{
+            margin-left: 5px !important;
+        }
+    }
+    h2{
+        position: relative;
+        padding-right: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        &::before{
+            position: absolute;
+            content: "";
+            background-color: #fdcf00;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 4px;
+            height: 100%;
+            border-radius: 1px;
+        }
+    }
+    .woocommerce-MyAccount-navigation{
+        background-color: #fff !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        border: none !important;
+        float: none !important;
+        width: 25% !important;
+        margin-bottom: 30px !important;
+        overflow: hidden !important;
+        @include sm{
+            width: 100% !important;
+        }
+        ul{
+            margin: 0 !important;
+            padding: 0 !important;
+            @include sm{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            li{
+                padding: 0;
+                margin: 0;
+                &::before{
+                    display: none !important;
+                }
+                &:last-child{
+                    a{
+                        border-bottom: none !important;
+                    }
+                }
+                a{
+                    padding: 20px !important;
+                    display: block;
+                    border-bottom: 1px solid #d9d9d9;
+                    @include sm{
+                        border-bottom: none !important;
+                    }
+                }
+            }
+            .is-active{
+                a{
+                    background-color: #fdcf00;
+                    color: #fff;
+                    @include sm{
+                        border-radius: 8px !important;
+                    }
+                }
+            }
+        }
+    }
+    .woocommerce-MyAccount-content {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        float: none !important;
+        width: 73% !important;
+        margin-bottom: 30px !important;
+        @include sm{
+            width: 100% !important;
+        }
+    }
+}
+.logged-in{
+    .woocommerce{
+        &::before{
+            display: none !important;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,36 @@
+@import 'sass/variables';
+@import 'sass/breakpoints';
+@import 'sass/source';
+
+.kadinerMobileNavbar{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height: 45px;
+    border-radius: 20px;
+    z-index: 999;
+    a{
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+    @include xs{
+        display: flex;
+    }
+}
+.mobileFiboSearch{
+    .dgwt-wcas-search-wrapp{
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+}

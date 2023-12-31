@@ -1,0 +1,1331 @@
+@import 'sass/variables';
+@import 'sass/breakpoints';
+@import 'sass/source';
+
+.singleBox {
+    margin: 50px auto;
+    max-width: 1000px;
+}
+.whiteBg{
+    background-color: #fff;
+}
+.generalSinglePostStyle{
+    .entry-header{
+        .entry-title{
+            color: $textColorLowSat;
+            font-weight: 600;
+            @include xs{
+                font-size: 22px;
+            }
+        }
+    }
+    .post-thumbnail{
+        img{
+            border-radius: 10px;
+        }
+    }
+    .entry-content{
+        img{
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        h2{
+            position: relative;
+            width: max-content;
+            margin: 0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            color: $mainColor;
+            font-weight: 600;
+            &::after{
+                position: absolute;
+                content: "";
+                background-color: #474b4f;
+                width: 80%;
+                height: 1px;
+                bottom: 0;
+                right: 0;
+                border-radius: 1px;
+            }
+            @include xs{
+                font-size: 19px;
+            }
+        }
+        h3,h4,h5,h6{
+            color: $textColorLowSat;
+            font-weight: 600;
+            @include xs{
+                font-size: 17px;
+            }
+        }
+        p{
+            color: $textColorLowSat;
+            text-align: justify;
+        }
+    }
+    .postFooterSec{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        font-size: 13px;
+        .postAuthor,.postDate,.postLinkToBlog,.numViewCount{
+            margin-left: 15px;
+        }
+    }
+}
+.single-post{
+    .comments-area{
+        .commentSection{
+            .comment-reply-title{
+                display: none;
+            }
+            .comment-respond{
+                form{
+                    padding: 25px;
+                    padding-top: 0;
+                    @include xs{
+                        padding: 5px;
+                    }
+                    .comment-form-comment{
+                        @include xs{
+                            margin-bottom: 10px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                        textarea{
+                            height: 120px;
+                        }
+                    }
+                    .comment-form-author{
+                        display: inline-block;
+                        width: 48%;
+                        margin-left: 16px;
+                        @include xs{
+                            display: block;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-bottom: 10px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                    }
+                    .comment-form-email{
+                        display: inline-block;
+                        width: 48%;
+                        margin-right: 16px;
+                        @include xs{
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 10px;
+                            margin-right: 0px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                    }
+                    .comment-form-url{
+                        display: none;
+                    }
+                    .comment-form-cookies-consent{
+                        display: flex;
+                        align-items: center;
+                        label{
+                            padding-right: 5px !important;
+                            margin-bottom: 0 !important;
+                            font-size: 13px;
+                            font-weight: 400;
+                            @include xs{
+                                font-size: 11.5px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+        .commentsOpenParent{
+            margin-bottom: 30px;
+            .comment-list{
+                padding: 0 !important;
+                margin: 0 !important;
+                li{
+                    padding: 20px;
+                    margin: 0;
+                    &::before{
+                        content: none;
+                    }
+                    .comment-body{
+                        background-color: $backColorDark2;
+                        padding: 25px;
+                        border-radius: 15px;
+                        @include xs{
+                            padding: 10px;
+                        }
+                        .comment-meta{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+                            @include xs{
+                                align-items: normal;
+                                flex-direction: column;
+                                font-size: 12px;
+                            }
+                            .comment-author{
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 100%;
+                                    margin: 0px 0px 5px 20px;
+                                    @include xs{
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                b{
+                                    margin-left: 4px;
+                                }
+                            }
+                            .comment-metadata a time{
+                                font-size: 14px;
+                                color: $textColorLowSat;
+                            }
+                        }
+                        .comment-content{
+                            p{
+                                @include xs{
+                                    font-size: 13px;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .children{
+                        @include xs{
+                            padding-right: 7px;
+                        }
+                        li{
+                            padding-left: 0;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .comment-reply-link {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            margin-right: auto;
+            display: flex;
+            width: max-content;
+            padding: 3px 8px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            &:hover{
+                background-color: $mainColor;
+                color: #000;
+            }
+        }
+    }
+}
+.archiveParent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    width: 80%;
+    margin: 30px auto;
+    @include xs{
+        width: 100%;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 10px;
+        margin: 15px auto;
+    }
+    a{
+        .archiveCardImg{
+            overflow: hidden;
+            min-height: 200px;
+            max-height: 200px;
+            @include xs{
+                min-height: 160px;
+                max-height: 160px;
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 0px 0px;
+            }
+        }
+        .entry-header{
+            padding: 0 10px;
+            .entry-title{
+                font-weight: 700;
+                font-size: 22px;
+                @include xs{
+                    font-size: 17px;
+                }
+            }
+        }
+        .archivePostFooter{
+            padding: 0 10px;
+            span{
+                @include xs{
+                    font-size: 13px;
+                }
+            }
+        }
+        .readMoreButton{
+            color: $textColorLowSat;
+            font-weight: 900;
+            width: max-content;
+            display: block;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 3px;
+                background: $mainColor;
+                transition: width .3s;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}
+.archivePagination{
+    display: flex;
+    justify-content: center;
+    .pagination{
+        display: flex;
+        justify-content: space-between;
+        width: 15%;
+        @include xs{
+            width: 50%;
+        }
+        .next{
+            flex-direction: row-reverse;
+        }
+        .next,.prev{
+            display: flex;
+            align-items: center;
+            a{
+                color: $textColorLowSat;
+                font-weight: 500;
+            }
+            svg{
+                margin: 0px 3px;
+            }
+        }
+    }
+}
+.blogPageFooter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .blogPageFooterSec{
+        width: 47%;
+        @include xs{
+            width: 100%;
+        }
+        a{
+            display: flex;
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s;
+            width: max-content;
+            margin-right: auto;
+            &:hover{
+                color: $mainColor;
+            }
+        }
+    }
+}
+.blog{
+    main{
+        padding: 25px !important;
+    }
+}
+.irFactoryPageSecOneBack{
+    background-color: $backColorLight;
+    .logoSection{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        a{
+            img{
+                display: block;
+                width: 140px;
+                height: 40px;
+            }
+        }
+    }
+    .imagesSection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        img{
+            border-radius: 189px 189px 189px 189px;
+        }
+        .imagesSectionColumnOne{
+            width: 28%;
+            position: relative;
+            @include xs{
+                width: 100%;
+            }
+            .iconPart{
+                position: absolute;
+                bottom: 100px;
+                right: -50px;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                padding: 15px 10px 15px 100px;
+                border-radius: 52px 52px 52px 52px;
+                box-shadow: -31px 25px 60px -20px #000000;
+                @include xs{
+                    right: 50px;
+                    bottom: 500px;
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                svg{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .imagesSectionColumnTwo{
+            width: 23%;
+            text-align: center;
+            @include xs{
+                width: 100%;
+            }
+            span{
+                font-weight: 600;
+                font-size: 13px;
+            }
+            h1{
+                font-size: 20px;
+            }
+            a{
+                margin: 20px auto;
+                padding: 10px 50px;
+            }
+        }
+        .imagesSectionColumnThree{
+            width: 28%;
+            position: relative;
+            @include xs{
+                width: 100%;
+            }
+            .iconPart{
+                position: absolute;
+                top: 300px;
+                left: -50px;
+                background-color: #54595f;
+                display: flex;
+                align-items: center;
+                padding: 15px 10px 15px 100px;
+                border-radius: 52px 52px 52px 52px;
+                box-shadow: -31px 25px 60px -20px #000000;
+                @include xs{
+                    left: 50px;
+                    top: 0px;
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+                svg{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+.irFactoryPageSecTwoBack{
+    .detailBoxsParent{
+        .detailBoxs{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .detailBox{
+                border-radius: 16px;
+                width: 28%;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                @include xs{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                svg{
+                    margin: auto;
+                }
+                p{
+                    font-size: 13px;
+                    line-height: 21px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.irFactoryPageSecThreeBack{
+    background-color: $backColorLight;
+    .brandsSecBack{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        @include xs{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-gap: 30px;
+        }
+        .brandSec{
+            width: 60px;
+            height: 60px;
+            @include xs{
+                margin: auto;
+            }
+            img,svg{
+                width: 60px;
+                height: 60px;
+                filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+                transition-duration: 0.6s;
+                &:hover{
+                    filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+                }
+            }
+        }
+    }
+}
+.irFactoryPageSecFourBack{
+    .loopProductsSec{
+        .moreProductsButton{
+        display: flex;
+        justify-content: end;
+        font-weight: 700;
+        margin-top: 25px;
+        }
+    }
+}
+.irFactoryPageSecFiveBack{
+    background-color: $backColorLight;
+    padding-bottom: 20px;
+    .formSubmitSec{
+        .centerHeading{
+            margin-bottom: 30px;
+        }
+        .formSubmitSecInner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .formSubmitDetail {
+                width: 44%;
+                @include xs{
+                    width: 100%;
+                }
+                .iconSocialSec{
+                    div{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5px;
+                        svg{
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+            .formSubmit{
+                width: 50%;
+                @include xs{
+                    width: 100%;
+                    margin-top: 20px;
+                }
+                form{
+                    label{
+                        &:nth-child(2){
+                            width: 48%;
+                            display: inline-block;
+                            margin-left: 18px;
+                            @include xs{
+                                width: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        &:nth-child(3){
+                            width: 48%;
+                            display: inline-block;
+                            // margin-left: 18px;
+                            @include xs{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .wpcf7-submit{
+                        width: 30%;
+                        margin-right: auto;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .footerOfFormSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        svg{
+            animation: beat 0.5s infinite alternate;
+	        transform-origin: center;
+            margin: 0px 3px;
+        }
+        @keyframes beat{
+            to { transform: scale(1.25); }
+        }
+    }
+}
+.woocommerce-cart{
+    article{
+        margin: 30px 0;
+        .entry-header{
+            position: relative;
+            margin-bottom: 10px;
+            &::before{
+                position: absolute;
+                content: "";
+                background-color: #fdcf00;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 7px;
+                height: 100%;
+                border-radius: 1px;
+            }
+            .entry-title{
+                margin: 0;
+                padding-right: 15px;
+                line-height: 40px;
+            }
+        }
+        .woocommerce{
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            @include xs{
+                padding: 15px;
+            }
+            .woocommerce-cart-form{
+                table{
+                    border: none !important;
+                    tbody{
+                        tr{
+                            margin-bottom: 10px;
+                            .product-remove{
+                                background: $backColorLight;
+                                padding: 7px !important;
+                                border-radius: 15px;
+                                @include xs{
+                                    width: max-content;
+                                }
+                                a{
+                                    margin: auto;
+                                }
+                            }
+                            .product-subtotal{
+                                background: $backColorDark2;
+                                text-align: center;
+                                border-radius: 15px;
+                            }
+                            .product-quantity{
+                                @include xs{
+                                    width: 50%;
+                                }
+                            }
+                        }
+                        td{
+                            border-top: 5px solid #fff !important;
+                        }
+                        .actions{
+                            .coupon{
+                                display: flex;
+                                align-items: center;
+                                width: 50%;
+                                @include xs{
+                                    width: 100%;
+                                }
+                                .input-text{
+                                    width: 100%;
+                                    border: none;
+                                    padding: 10px;
+                                    @include xs{
+                                        width: 55%;
+                                        padding: 5px;
+                                    }
+                                }
+                                .button{
+                                    width: 50%;
+                                    border-radius: 20px;
+                                    background-color: #757575;
+                                    color: #fff;
+                                    padding: 14px;
+                                    @include xs{
+                                        padding: 8px;
+                                    }
+                                }
+                            }
+                            .button{
+                                background-color: #58d5e4;
+                                padding: 12px;
+                                color: #fff;
+                                font-weight: 400;
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .cart-collaterals{
+                background: $backColorDark2;
+                padding: 15px;
+                border-radius: 15px;
+                .cart_totals {
+                    width: 100%;
+                    h2{
+                        color: #767676;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    table{
+                        width: 60%;
+                        border: none !important;
+                        @include xs{
+                            width: 100%;
+                        }
+                        td{
+                            border-top: 5px solid transparent !important;
+                        }
+                        ul{
+                            li{
+                                &::before{
+                                    content: none;
+                                }
+                            }
+                        }
+                        .order-total{
+                            td{
+                                bdi{
+                                    color: #4caf50;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                    .wc-proceed-to-checkout{
+                        width: 40%;
+                        margin-right: auto;
+                        display: flex;
+                        justify-content: end;
+                        @include xs{
+                            width: 100%;
+                            flex-direction: column;
+                        }
+                        a{
+                            border-radius: 15px;
+                            background-color: #fdcf00;
+                            color: #fff;
+                            font-weight: 400;
+                            margin-bottom: 0;
+                            padding: 10px 15px;
+                            display: flex;
+                            align-items: center;
+                            line-height: 25px;
+                            font-size: 13px;
+                            @include xs{
+                                justify-content: center;
+                                line-height: 20px;
+                            }
+                        }
+                        .linkToShop{
+                            background-color: #757575;
+                            margin-left: 5px;
+                            @include xs{
+                                margin-left: 0;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                    .woocommerce-shipping-totals{
+                        td{
+                            .woocommerce-shipping-methods{
+                                li{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: flex-start;
+                                    @include xs{
+                                        width: 100%;
+                                    }
+                                    input.shipping_method{
+                                        width: max-content;
+                                        height: max-content;
+                                    }
+                                    label{
+                                        margin: 0;
+                                        width: 90%;
+                                        @include xs{
+                                            font-size: 11.5px;
+                                        }
+                                    }
+                                }
+                            }
+                            .woocommerce-shipping-destination,.woocommerce-shipping-calculator{
+                                @include xs{
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.woocommerce-checkout{
+    article{
+        margin: 30px 0;
+        .entry-header{
+            position: relative;
+            margin-bottom: 10px;
+            &::before{
+                position: absolute;
+                content: "";
+                background-color: #fdcf00;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 7px;
+                height: 100%;
+                border-radius: 1px;
+            }
+            .entry-title{
+                margin: 0;
+                padding-right: 15px;
+                line-height: 40px;
+            }
+        }
+        .woocommerce{
+            background-color: #fff;
+            border-radius: 10px;
+            .woocommerce-form-coupon-toggle{
+                .woocommerce-info{
+                    border-top-color: #fdcf00 !important;
+                    &::before{
+                        color: #fdcf00 !important;
+                    }
+                }
+            }
+            .woocommerce-form-coupon{
+                .form-row-first{
+                    input{
+                        border-radius: 20px;
+                    }
+                }
+                .form-row-last{
+                    margin-bottom: 0;
+                    .button{
+                        &[type=submit]{
+                            background-color: #757575;
+                            border-radius: 20px;
+                            color: #fff;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+            form.woocommerce-checkout{
+                padding: 15px;
+                .woocommerce-checkout-review-order{
+                    table{
+                        border: none !important;
+                        border-collapse: separate;
+                        td,th{
+                            border-top: 5px solid transparent !important;
+                        }
+                        tbody{
+                            .cart_item{
+                                // background-color: $backColorDark2;
+                                .product-name{
+                                    border-radius: 0px 20px 20px 0px;
+                                    background-color: $backColorDark2;
+                                }
+                                .product-total{
+                                    background-color: $backColorDark2;
+                                    border-radius: 20px 0px 0px 20px;
+                                    bdi{
+                                        color: #4caf50;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        tfoot{
+                            .cart-subtotal{
+                                .woocommerce-Price-amount{
+                                    bdi{
+                                    color: #4caf50;
+                                    font-weight: 600;
+                                    }
+                                }
+                            }
+                            .woocommerce-shipping-totals{
+                                td{
+                                    .woocommerce-shipping-methods{
+                                        li{
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            justify-content: flex-start;
+                                            &::before{
+                                                content: none;
+                                            }
+                                            input.shipping_method{
+                                                width: max-content;
+                                                height: max-content;
+                                            }
+                                            label{
+                                                margin: 0;
+                                                width: 90%;
+                                                @include xs{
+                                                    width: 80%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .order-total{
+                                .woocommerce-Price-amount{
+                                    bdi{
+                                        color: #4caf50;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .woocommerce-checkout-payment{
+                        ul{
+                            &::before{
+                                content: none !important;
+                            }
+                            li{
+                                &::before{
+                                    content: none !important;
+                                }
+                            }
+                        }
+                        .place-order{
+                            .woocommerce-terms-and-conditions-wrapper{
+                                p{
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                }
+                            }
+                            .button{
+                                &[type=submit]{
+                                    background-color: #fdcf00;
+                                    width: 100%;
+                                    padding: 20px;
+                                    border-radius: 20px;
+                                    font-size: 18px;
+                                    transition: all 0.3s;
+                                    color: #2e2e2e !important;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    &:hover{
+                                        background-color: #54595f;
+                                        color: #fff !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .col2-set{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .col-1,.col-2{
+                        width: 100%;
+                        .woocommerce-billing-fields,.woocommerce-shipping-fields{
+                            .woocommerce-billing-fields__field-wrapper,.shipping_address{
+                                display: flex;
+                                flex-wrap: wrap;
+                                .form-row{
+                                    width: 48%;
+                                    @include xs{
+                                        width: 100%;
+                                    }
+                                }
+                                .select2-container--default .select2-selection--single{
+                                    background-color: #ededed !important;
+                                    border: none !important;
+                                    border-radius: 20px !important;
+                                    padding: 20px 0px !important;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .select2-selection__arrow{
+                                    top: 5px;
+                                }
+                                input{
+                                    border-radius: 20px !important;
+                                }
+                                .validate-postcode{
+                                    input{
+                                        border: none;
+                                        background-color: #ededed;
+                                        color: #2e2e2e;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            .woocommerce-shipping-fields__field-wrapper{
+                                display: flex;
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                }
+                .woocommerce-checkout-payment{
+                    border-radius: 20px !important;
+                    .payment_box , .payment_method_WC_Zibal{
+                        background: transparent !important;
+                        @include xs{
+                            padding: 0 !important;
+                        }
+                        &::before{
+                            content: none !important;
+                        }
+                        p{
+                            font-size: 18px;
+                            font-weight: 700;
+                            @include xs{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.deliveryPageBack{
+    .deliveryPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        p.subHeadingDelivery{
+            text-align: center;
+            margin: 20px auto;
+            width: 88%;
+            color: $textColorSemi;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .deliveryPageInner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            .textBox{
+                width: 50%;
+                text-align: justify;
+                @include xs{
+                    width: 100%;
+                    order: 2;
+                }
+                .deliveryPageHeadingInner{
+                    @include xs{
+                        font-size: 19px;
+                    }
+                }
+                a{
+                    color: $textColorLowSat;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+            }
+            .imageBox{
+                width: 45%;
+                @include xs{
+                    width: 100%;
+                }
+                img{
+                    @include xs{
+                        width: 60%;
+                        margin: auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+.rulesPageBack{
+    .rulesPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        .rulesPageInner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            .imageBox{
+                align-items: center;
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                @include xs{
+                    width: 100%;
+                    order: 2;
+                    align-items: flex-start;
+                }
+                img{
+                    @include xs{
+                        width: 60%;
+                    }
+                }
+            }
+            .textBox{
+                width: 45%;
+                @include xs{
+                    width: 100%;
+                }
+                .rulesPageHeadingInner{
+                    font-weight: 600;
+                    @include xs{
+                        font-size: 19px;
+                    }
+                }
+                p{
+                    text-align: justify;
+                }
+                .faqSection{
+                    border: 1px solid #d5d8dc;
+                    margin-bottom: 15px;
+                    .faq{
+                        padding: 8px;
+                        .question{
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            h3{
+                                padding-right: 8px;
+                                font-size: 17px;
+                                font-weight: 600;
+                            }
+                            // #openCloseFaq{
+                            //     #openFaq{
+                            //         display: block;
+                            //     }
+                            // }
+                        }
+                        #closeFaq{
+                            display: none;
+                        }
+                        .answer{
+                            display: none;
+                            margin-right: 15px;
+                        }
+                        &:nth-child(2){
+                            border-top: 1px solid #d5d8dc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.designersPageBack{
+    .designersPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        .designersPageInner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 20px;
+            .imageBox{
+                width: 50%;
+                @include xs{
+                    width: 60%;
+                    margin-bottom: 10px;
+                }
+            }
+            .designerSectionParent{
+                width: 45%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-column-gap: 10px;
+                grid-row-gap: 30px;
+                @include xs{
+                    width: 100%;
+                }
+                .designerBox{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        .designerImg{
+                            width: 30%;
+                            min-height: 70px;
+                            max-height: 70px;
+                            @include xs{
+                                min-height: 50px;
+                                max-height: 50px;
+                            }
+                            img{
+                                display: block;
+                                border-radius: 10px;
+                                min-height: 70px;
+                                max-height: 70px;
+                                object-fit: cover;
+                                @include xs{
+                                    min-height: 50px;
+                                    max-height: 50px;
+                                }
+                            }
+                        }
+                        .designerInfo{
+                            margin-right: 10px;
+                            p{
+                                margin: 0;
+                            }
+                            .designerName{
+                                font-size: 16px;
+                                font-weight: 600;
+                                margin-bottom: 5px;
+                                @include xs{
+                                    font-size: 14px;
+                                }
+                            }
+                            .designerNumProduct{
+                                font-size: 12px;
+                                color: #767676;
+                                @include xs{
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .subPagedesigners{
+            color: #767676;
+            text-align: center;
+            @include xs{
+                font-size: 13px;
+            }
+        }
+    }
+}
+.faqPageBack{
+    .faqPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        .faqPageInner{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .textBox{
+                width: 50%;
+                @include xs{
+                    width: 100%;
+                    order: 2;
+                }
+                .faqSection{
+                    border: 1px solid #d5d8dc;
+                    margin-bottom: 15px;
+                    .faq{
+                        padding: 8px;
+                        border-bottom: 1px solid #d5d8dc;
+                        .question{
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            h3{
+                                padding-right: 8px;
+                                font-size: 17px;
+                                font-weight: 600;
+                            }
+                        }
+                        #openCloseFaq{
+                            height: 20px;
+                        }
+                        #closeFaq{
+                            display: none;
+                        }
+                        .answer{
+                            display: none;
+                            margin-right: 15px;
+                            text-align: justify;
+                        }
+                        &:last-child{
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            .imageBox{
+                width: 45%;
+                @include xs{
+                    width: 60%;
+                    order: 1;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    h1{
+                        font-size: 19px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

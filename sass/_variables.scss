@@ -1,0 +1,33 @@
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-Thin.woff2'); font-weight: 100;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-Light.woff2'); font-weight: 300;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-Regular.woff2'); font-weight: 400;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-SemiBold.woff2'); font-weight: 600;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-Bold.woff2'); font-weight: 700;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-ExtraBold.woff2'); font-weight: 800;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-Black.woff2'); font-weight: 900;}
+@font-face { font-family: 'yekanbakhweb';src: url('fonts/yekanbakh/YekanBakhFaNum-ExtraBlack.woff2'); font-weight: 910;}
+
+
+//Text Colors
+$textColorDark: #2e2e2e;
+$textColorLowSat: #767676;
+$textColorSemi: #474b4f;
+
+//Main Colors
+$mainColor: #fdcf00;
+$offColor: #54595f;
+
+//Gradient Colors
+$backColorDark: #d6d6d6;
+$backColorDark2: #ededed;
+$backColorLight: #fbfbfb;
+$backColorLight2: #ffffff;
+
+
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
