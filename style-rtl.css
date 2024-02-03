@@ -735,6 +735,15 @@ select {
   .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight {
     width: 100%;
     order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a {
+    width: 48%;
   }
 }
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a img {
@@ -745,8 +754,19 @@ select {
   margin-bottom: 15px;
   height: 188px;
 }
+@media screen and (max-width: 480px) {
+  .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a:nth-child(1) {
+    height: unset;
+    margin-bottom: 0;
+  }
+}
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a:nth-child(2) {
   height: 188px;
+}
+@media screen and (max-width: 480px) {
+  .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a:nth-child(2) {
+    height: unset;
+  }
 }
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .introSliderParentLeft {
   width: 65%;
@@ -796,6 +816,12 @@ select {
 }
 .mainFooterContainer .mainFooter .socialMediaContainer a {
   margin-left: 20px;
+}
+.mainFooterContainer .mainFooter .socialMediaContainer a svg {
+  transition: all 0.3s;
+}
+.mainFooterContainer .mainFooter .socialMediaContainer a:hover svg {
+  fill: #fdcf00;
 }
 
 .kadinerCtaSectionContainer .kadinerCtaSection {
@@ -1449,11 +1475,8 @@ select {
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-  background: #fdd729 !important;
-  color: #434343 !important;
   z-index: 2;
-  border-bottom: none !important;
-  border: 2px solid #434343 !important;
+  border-bottom: 1px solid #fdcf00 !important;
 }
 
 .woocommerce-tabs {
@@ -1479,13 +1502,18 @@ select {
   }
 }
 .woocommerce-tabs .wc-tabs li {
-  border: 2px solid #eeeeee !important;
-  border-radius: 10px !important;
-  background-color: #ffffff !important;
   margin-left: 20px !important;
   transition: all 0.3s;
+  color: #434343 !important;
+  z-index: 2;
+  border: none !important;
+  border-bottom: 1px solid #cecece !important;
+  border-radius: 0 !important;
 }
 .woocommerce-tabs .wc-tabs li::before {
+  display: none !important;
+}
+.woocommerce-tabs .wc-tabs li::after {
   display: none !important;
 }
 .woocommerce-tabs .wc-tabs li a::after {
@@ -1633,6 +1661,11 @@ ul.products li.product .productCardBottomWrapper a:nth-child(1) {
 ul.products li.product .price {
   text-align: right;
   margin-bottom: 0 !important;
+  position: relative;
+}
+ul.products li.product .price > del {
+  position: absolute;
+  top: 20px;
 }
 ul.products li.product .price .price-prefix {
   font-size: 16px;
@@ -2420,4 +2453,165 @@ ul.products li.product .price ins {
   .productSectionMobileBtn {
     display: block !important;
   }
+}
+
+.kadinerHeaderMenuBtnnnn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kadinerHeaderMenuTtems {
+  transition: all 0.3s;
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  top: 0;
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  height: -moz-max-content;
+  height: max-content;
+  display: none;
+}
+.kadinerHeaderMenuTtems .generalButton {
+  margin: 0;
+}
+.kadinerHeaderMenuTtems li {
+  padding: 3px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 5px !important;
+}
+.kadinerHeaderMenuTtems li::before {
+  display: none;
+}
+
+.kadinerHeaderMenuTtems {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999999;
+  box-shadow: unset;
+  width: 80%;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 25px;
+}
+.kadinerHeaderMenuTtems li {
+  border-radius: 10px;
+  background-color: #fdcf00;
+  margin: 10px 0 !important;
+  padding: 10px;
+}
+.kadinerHeaderMenuTtems li a {
+  font-weight: 600;
+}
+.kadinerHeaderMenuTtems .closeKadinerHeaderMenuBtnnnnn {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.mobileHeader .kadinerHeaderMenuBtnnnn {
+  flex-direction: unset;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fdcf00;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+.mobileHeader .kadinerHeaderMenuBtnnnn span {
+  display: block;
+  height: 20px;
+  margin-left: 5px;
+}
+.mobileHeader .kadinerHeaderMenuBtnnnn a {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+}
+
+.dgwt-wcas-sf-wrapp {
+  box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.05) !important;
+}
+.dgwt-wcas-sf-wrapp .dgwt-wcas-search-input {
+  border: 1px solid #ddd !important;
+}
+
+.comment-form .form-submit .submit {
+  background-color: #fdcf00;
+  border-radius: 10px;
+  color: #2e2e2e !important;
+  padding: 10px 20px;
+  font-size: 14.5px;
+  display: block;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.comment-form-cookies-consent input {
+  width: -moz-max-content;
+  width: max-content;
+}
+.comment-form-cookies-consent label {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.kadinerPromotion .sectionHeader {
+  justify-content: flex-start;
+}
+.kadinerPromotion .kadinerSaleCountDown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .kadinerPromotion .kadinerSaleCountDown {
+    margin-right: 5px;
+  }
+}
+.kadinerPromotion .kadinerSaleCountDown .remainingText {
+  margin-left: 5px;
+}
+.kadinerPromotion .kadinerSaleCountDown .countDownNumber {
+  background-color: #fdcf00;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.kadinerPromotion .kadinerSaleCountDown .divider {
+  display: block;
+  margin: 0 5px;
+  font-size: 18px;
 }/*# sourceMappingURL=style-rtl.css.map */

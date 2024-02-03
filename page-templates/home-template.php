@@ -10,8 +10,8 @@ $minislider_right_up = get_field( "minislider_right_up");
 $minislider_right_down = get_field( "minislider_right_down");
 $grid_banner_under_slider = get_field( "grid_banner_under_slider");
 $grid_middle__home_mb = get_field( "grid_middle__home_mb");
-
-
+$kadiner_custom_mb_pro_is_active = get_field('kadiner_custom_mb_pro_is_active' , 'options');
+$kadiner_custom_mb_pro_products = get_field('kadiner_custom_mb_pro_products', 'options');
 get_header();
 ?>
 
@@ -52,6 +52,51 @@ get_header();
     </div>
 </div>
 <div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce">
+    <?php if($kadiner_custom_mb_pro_is_active){ ?>
+    <div class="homeProductContainer mainView kadinerPromotion">
+        <div class="sectionHeader">
+            <div class="generalHeading">
+                <h2>شگفت‌انگیزهای کادینر</h2>
+            </div>
+            <div class="kadinerSaleCountDown">
+                <span class="remainingText">زمان باقی‌مانده:</span>
+                <span class="countDownNumber" id="kadinerSaleSeconds">00</span>
+                <span class="divider">:</span>
+                <span class="countDownNumber" id="kadinerSaleMinutes">00</span>
+                <span class="divider">:</span>
+                <span class="countDownNumber" id="kadinerSaleHours">00</span>
+            </div>
+            <a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionDesktopBtn">مشاهده همه</a>
+        </div>
+        <?php customSaleCounter(); ?>
+        <div class="swiper stickerProductSwiper">
+            <ul class="swiper-wrapper products">
+                <?php
+                    $arrayOfPromotions = array();
+                    foreach($kadiner_custom_mb_pro_products as $pro){
+                        if($pro['is_on_home']){
+                            $arrayOfPromotions[]=$pro['product'];
+                        }
+                    }
+                    $getProductsArgs = array(
+                        'post_type'=>'product',
+                        'posts_per_page'=>10,
+                        'post__in' => $arrayOfPromotions
+                    );
+                    $getProductsQuery = new WP_Query($getProductsArgs);
+                    while($getProductsQuery->have_posts()): $getProductsQuery->the_post();
+                        wc_get_template_part( 'content', 'product-swiper' );
+                    endwhile;
+                    wp_reset_postdata();
+                ?>
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionMobileBtn">مشاهده همه</a>
+    </div>
+    <?php } ?>
     <div class="homeProductContainer mainView">
         <div class="sectionHeader">
             <div class="generalHeading">

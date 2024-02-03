@@ -170,17 +170,31 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 @include xs{
                     width: 100%;
                     order: 2;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    flex-direction: unset;
                 }
                 a{
+                    @include xs{
+                        width: 48%;
+                    }
                     img{
                         object-fit: cover;
                     }
                     &:nth-child(1){
                         margin-bottom: 15px;
                         height: 188px;
+                        @include xs{
+                            height: unset;
+                            margin-bottom: 0;
+                        }
                     }
                     &:nth-child(2){
                         height: 188px;
+                        @include xs{
+                            height: unset;
+                        }
                     }
                 }
             }
@@ -226,6 +240,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             justify-content: flex-start;
             a{
                 margin-left: 20px;
+                svg{
+                    transition: all 0.3s;
+                }
+                &:hover{
+                    svg{
+                        fill: $mainColor;
+                    }
+                }
             }
         }
     }
@@ -915,11 +937,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         .woocommerce-tabs{
             ul.tabs{
                 li.active{
-                    background: #fdd729 !important;
-                    color: #434343 !important;
                     z-index: 2;
-                    border-bottom: none !important;
-                    border: 2px solid #434343 !important;
+                    border-bottom: 1px solid $mainColor !important;
                 }
             }
         }
@@ -944,12 +963,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             }
         }
         li{
-            border: 2px solid #eeeeee !important;
-            border-radius: 10px !important;
-            background-color: #ffffff !important;
             margin-left: 20px !important;
             transition: all 0.3s;
             &::before{
+                display: none !important;
+            }
+            &::after{
                 display: none !important;
             }
             a{
@@ -957,6 +976,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                     display: none !important;
                 }
             }
+            color: #434343 !important;
+            z-index: 2;
+            border: none !important;
+            border-bottom: 1px solid #cecece !important;
+            border-radius: 0 !important;
         }
     }
 }
@@ -1097,6 +1121,11 @@ ul.products{
         .price{
             text-align: right;
             margin-bottom: 0 !important;
+            position: relative;
+            >del{
+                position: absolute;
+                top: 20px;
+            }
             .price-prefix{
                 font-size: 16px;
                 @include xs{
@@ -1883,5 +1912,187 @@ ul.products{
     text-align: center !important;
     @include xs{
         display: block !important;
+    }
+}
+
+
+.kadinerHeaderMenuBtnnnn{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    // &:hover{
+    //     div{
+    //         opacity: 1;
+    //         visibility: visible;
+    //         transform: translateY(0);
+    //     }   
+    // }
+
+}
+.kadinerHeaderMenuTtems{
+    transition: all 0.3s;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    top: 0;
+    z-index: 999;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+    transform: translateY(-2px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: max-content;
+    display: none;
+    .generalButton{
+        margin: 0;
+    }
+    li{
+        padding: 3px;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 5px !important;
+        &::before{
+            display: none;
+        }
+        // &:hover{
+        //     a{
+        //         display: block;
+        //         transform: translateX(-3px);
+        //         color: $mainColor;
+        //     }
+        // }
+    }
+}
+
+
+.kadinerHeaderMenuTtems{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999999;
+    box-shadow: unset;
+    width: 80%;
+    height: max-content;
+    padding: 25px;
+    li{
+        border-radius: 10px;
+        background-color: #fdcf00;
+        margin: 10px 0 !important;
+        padding: 10px;
+        a{
+            font-weight: 600;
+        }
+    }
+    .closeKadinerHeaderMenuBtnnnnn{
+        display: flex;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+}
+
+
+
+.mobileHeader{
+    .kadinerHeaderMenuBtnnnn{
+        flex-direction: unset;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #fdcf00;
+        border-radius: 10px;
+        padding: 10px;
+        transition: all 0.3s;
+        span{
+            display: block;
+            height: 20px;
+            margin-left: 5px;
+        }
+        a{
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: -0.5px;
+        }
+    }
+}
+
+.dgwt-wcas-sf-wrapp{
+    box-shadow: 2px 1px 6px 0px rgba(0,0,0,0.05) !important;
+    .dgwt-wcas-search-input{
+        border: 1px solid #ddd !important;
+    }
+}
+
+.comment-form{
+    .form-submit{
+        .submit{
+            background-color: #fdcf00;
+            border-radius: 10px;
+            color: #2e2e2e !important;
+            padding: 10px 20px;
+            font-size: 14.5px;
+            display: block;
+            transition: all .3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 0;
+            letter-spacing: -.5px;
+        }
+    }
+}
+
+.comment-form-cookies-consent{
+    input{
+        width: max-content;
+    }
+    label{
+        width: max-content;
+        margin: 0;
+        margin-right: 10px;
+    }
+}
+.kadinerPromotion{
+    .sectionHeader{
+        justify-content: flex-start;
+    }
+    .kadinerSaleCountDown{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: auto;
+        margin-left: 10px;
+        @include sm{
+            margin-right: 5px;
+        }
+        .remainingText{
+            margin-left: 5px;
+        }
+        .countDownNumber{
+            background-color: #fdcf00;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+        .divider{
+            display: block;
+            margin: 0 5px;
+            font-size: 18px;
+        }
     }
 }

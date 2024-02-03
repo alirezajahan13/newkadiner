@@ -7,7 +7,7 @@
  * @package newkadiner
  */
 
- define( '_S_VERSION', '1.0.22' );
+ define( '_S_VERSION', '1.0.29' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -161,6 +161,8 @@ function newkadiner_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_script( 'countdown-script', get_template_directory_uri() . '/js/countdown.js', array( 'jquery' ), _S_VERSION, true );
+	// wp_enqueue_script( 'countdown-script', get_template_directory_uri() . '/js/countdown.js', array( 'jquery' ), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'newkadiner_scripts' );
 
@@ -796,4 +798,54 @@ function kadiner_custom_order_status_notices() {
 			$_REQUEST[ 'changed' ]
 		);
 	}
+}
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Header Settings',
+        'menu_title'    => 'Header',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+
+}
+require_once('custom-functions/jdf.php');
+
+function customSaleCounter(){
+	$kadiner_custom_mb_pro_endgp = get_field('kadiner_custom_mb_pro_endgp' , 'options');
+	$proEndSecond = 59;
+	$proEndMinute = explode(":",$kadiner_custom_mb_pro_endgp['pro_time'])[1];
+	$proEndHour = explode(":",$kadiner_custom_mb_pro_endgp['pro_time'])[0];
+	$proEndDay = $kadiner_custom_mb_pro_endgp['pro_day'];
+	$proEndMonth = $kadiner_custom_mb_pro_endgp['pro_month'];
+	$proEndYear = $kadiner_custom_mb_pro_endgp['pro_year'];
+	$unixEndDate = jmktime($proEndHour,$proEndMinute,$proEndSecond,$proEndMonth,$proEndDay,$proEndYear);
+	$unixNowDate = jmktime();
+	$unixDiff = $unixEndDate - $unixNowDate;
+	if($unixDiff>0){
+		$diffHour = floor($unixDiff/3600);
+		$diffMinute = floor(($unixDiff - $diffHour*3600)/60);
+		$diffSecond = floor($unixDiff - $diffHour*3600 - $diffMinute*60);
+	}
+	else{
+		$diffHour = 00;
+		$diffMinute = 00;
+		$diffSecond = 00;
+	}
+	
+	echo '<input id="coutdownSource" type="hidden" data-pro-hour="'.$diffHour.'" data-pro-minute="'.$diffMinute.'" data-pro-second="'.$diffSecond.'">';
 }
