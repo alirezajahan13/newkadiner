@@ -52,8 +52,9 @@ get_header();
     </div>
 </div>
 <div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce HomePromotion">
-<div class="promotionBackgroundOverlay"></div>
+
     <?php if($kadiner_custom_mb_pro_is_active){ ?>
+    <div class="promotionBackgroundOverlay"></div>
     <div class="homeProductContainer mainView kadinerPromotion">
         
         <div class="sectionHeader">
