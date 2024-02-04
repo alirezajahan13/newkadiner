@@ -42,8 +42,25 @@ get_header();
 		</div>
 	</div>
 </header>
+<div class="kadinerPromotion promotionPageCountDownSec">
+	<div class="sectionHeader mainView">
+		<div class="generalHeading">
+			<h2>شگفت‌انگیزهای کادینر</h2>
+		</div>
+		<div class="kadinerSaleCountDown">
+			<span class="remainingText">زمان باقی‌مانده:</span>
+			<span class="countDownNumber" id="kadinerSaleSeconds">00</span>
+			<span class="divider">:</span>
+			<span class="countDownNumber" id="kadinerSaleMinutes">00</span>
+			<span class="divider">:</span>
+			<span class="countDownNumber" id="kadinerSaleHours">00</span>
+		</div>
+		<a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionDesktopBtn">مشاهده همه</a>
+	</div>
+</div>
     <ul class="products">
     <?php
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $arrayOfPromotions = array();
         foreach($kadiner_custom_mb_pro_products as $pro){
             if($pro['is_on_home']){
@@ -53,14 +70,23 @@ get_header();
         $getProductsArgs = array(
             'post_type'=>'product',
             'posts_per_page'=>3,
-            'post__in' => $arrayOfPromotions
+            'post__in' => $arrayOfPromotions,
+			'paged'=>$paged,
         );
         $getProductsQuery = new WP_Query($getProductsArgs);
         while($getProductsQuery->have_posts()): $getProductsQuery->the_post();
             wc_get_template_part( 'content', 'product' );
         endwhile;
         echo '</ul>';
-        do_action( 'woocommerce_after_shop_loop' );
+		echo '<div class="paginationParent">';
+		$offerPaginationArgs = array(
+			'total' => $getProductsQuery->max_num_pages,
+			'current' => max( 1, get_query_var( 'paged' ) ),
+			'prev_text' => __( '→', 'kadiner' ),
+			'next_text' => __( '←', 'kadiner' ),
+		);
+			echo paginate_links($offerPaginationArgs);
+		echo '</div>';
         wp_reset_postdata();
     ?>
 </div>
