@@ -2099,19 +2099,19 @@ ul.products{
     }
     padding-top: 30px;
     padding-bottom: 30px;
-    .customSaleBadge,a.button{
-        background-color: #D32F2F !important;
-    }
+    // .customSaleBadge,a.button{
+    //     background-color: #D32F2F !important;
+    // }
 }
 .HomePromotion{
     position: relative;
     padding: 0 !important;
 }
-.elementor-background-overlay{
+.promotionBackgroundOverlay{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url(https://pahlevanshop.com/wp-content/uploads/2021/01/percentage-pattern-1.png);
+    background-image: url(img/Final.png);
 }
 .kadinerPromotion{
     .sectionHeader{
@@ -2178,4 +2178,22 @@ ul.products{
             background: transparent !important;
         }
     }
+}
+.homeProductContainer{
+        .promotionHeading{
+            &::before{
+                background-color: #fff;
+            }
+        }
+        .kadinerSaleCountDown{
+            .countDownNumber{
+                background-color: #fff;
+            }
+        }
+        .promotionLinkBtn{
+            background-color: #fff;
+            &:hover{
+                background-color: #54595f;
+            }
+        }
 }

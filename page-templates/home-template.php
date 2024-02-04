@@ -52,12 +52,12 @@ get_header();
     </div>
 </div>
 <div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce HomePromotion">
-<div class="elementor-background-overlay"></div>
+<div class="promotionBackgroundOverlay"></div>
     <?php if($kadiner_custom_mb_pro_is_active){ ?>
     <div class="homeProductContainer mainView kadinerPromotion">
         
         <div class="sectionHeader">
-            <div class="generalHeading">
+            <div class="generalHeading promotionHeading">
                 <h2>شگفت‌انگیزهای کادینر</h2>
             </div>
             <div class="kadinerSaleCountDown">
@@ -68,7 +68,7 @@ get_header();
                 <span class="divider">:</span>
                 <span class="countDownNumber" id="kadinerSaleHours">00</span>
             </div>
-            <a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionDesktopBtn">مشاهده همه</a>
+            <a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionDesktopBtn promotionLinkBtn">مشاهده همه</a>
         </div>
         <?php customSaleCounter(); ?>
         <div class="swiper stickerProductSwiper">
