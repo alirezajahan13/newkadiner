@@ -585,6 +585,7 @@ select {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
+  margin-bottom: 20px;
 }
 .sectionHeader .generalHeading, .sectionHeader .generalButton {
   margin: 0;
@@ -2581,8 +2582,13 @@ ul.products li.product .price ins {
   margin-right: 10px;
 }
 
+.kadinerPromotion {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .kadinerPromotion .sectionHeader {
   justify-content: flex-start;
+  position: relative;
 }
 .kadinerPromotion .kadinerSaleCountDown {
   display: flex;
@@ -2614,4 +2620,19 @@ ul.products li.product .price ins {
   display: block;
   margin: 0 5px;
   font-size: 18px;
+}
+.kadinerPromotion .customSaleBadge, .kadinerPromotion a.button {
+  background-color: #D32F2F !important;
+}
+
+.HomePromotion {
+  position: relative;
+  padding: 0 !important;
+}
+
+.elementor-background-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://pahlevanshop.com/wp-content/uploads/2021/01/percentage-pattern-1.png);
 }/*# sourceMappingURL=style-rtl.css.map */

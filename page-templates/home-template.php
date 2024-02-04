@@ -51,9 +51,11 @@ get_header();
         } ?>
     </div>
 </div>
-<div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce">
+<div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce HomePromotion">
+<div class="elementor-background-overlay"></div>
     <?php if($kadiner_custom_mb_pro_is_active){ ?>
     <div class="homeProductContainer mainView kadinerPromotion">
+        
         <div class="sectionHeader">
             <div class="generalHeading">
                 <h2>شگفت‌انگیزهای کادینر</h2>
@@ -95,8 +97,12 @@ get_header();
             <!-- <div class="swiper-pagination"></div> -->
         </div>
         <a href="https://kadiner.ir/product-category/sticker/" class="generalButton productSectionMobileBtn">مشاهده همه</a>
+        
     </div>
     <?php } ?>
+    
+</div>
+<div class="generalKadinerHomeProductCaontainer sectionPadding woocommerce">
     <div class="homeProductContainer mainView">
         <div class="sectionHeader">
             <div class="generalHeading">
