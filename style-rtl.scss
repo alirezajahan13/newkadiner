@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
+    margin-bottom: 20px;
     .generalHeading , .generalButton{
         margin: 0;
     }
@@ -2065,6 +2066,7 @@ ul.products{
 .kadinerPromotion{
     .sectionHeader{
         justify-content: flex-start;
+        position: relative;
     }
     .kadinerSaleCountDown{
         display: flex;
@@ -2095,36 +2097,19 @@ ul.products{
             font-size: 18px;
         }
     }
-}
-.promotionPageCountDownSec{
-    margin: 25px 0px;
-}
-.promotionPage{
-    .paginationParent{
-        text-align: right !important;
-        margin: 30px 0 !important;
-        span,a{
-            margin: 0;
-            text-decoration: none;
-            padding: 0;
-            line-height: 1;
-            font-size: 1em;
-            font-weight: 400;
-            padding: 0.5em;
-            min-width: 1em;
-            // display: block;
-            background-color: #fff;
-            border-radius: 5px !important;
-            padding: 5px 15px !important;
-            border: none !important;
-            margin-left: 5px !important;
-        }
-        .current{
-            background: #e9e6ed;
-            color: #816e99;
-        }
-        .next{
-            background: transparent !important;
-        }
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .customSaleBadge,a.button{
+        background-color: #D32F2F !important;
     }
+}
+.HomePromotion{
+    position: relative;
+    padding: 0 !important;
+}
+.elementor-background-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(https://pahlevanshop.com/wp-content/uploads/2021/01/percentage-pattern-1.png);
 }

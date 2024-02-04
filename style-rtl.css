@@ -585,6 +585,7 @@ select {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
+  margin-bottom: 20px;
 }
 .sectionHeader .generalHeading, .sectionHeader .generalButton {
   margin: 0;
@@ -2581,8 +2582,13 @@ ul.products li.product .price ins {
   margin-right: 10px;
 }
 
+.kadinerPromotion {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .kadinerPromotion .sectionHeader {
   justify-content: flex-start;
+  position: relative;
 }
 .kadinerPromotion .kadinerSaleCountDown {
   display: flex;
@@ -2615,34 +2621,18 @@ ul.products li.product .price ins {
   margin: 0 5px;
   font-size: 18px;
 }
-
-.promotionPageCountDownSec {
-  margin: 25px 0px;
+.kadinerPromotion .customSaleBadge, .kadinerPromotion a.button {
+  background-color: #D32F2F !important;
 }
 
-.promotionPage .paginationParent {
-  text-align: right !important;
-  margin: 30px 0 !important;
+.HomePromotion {
+  position: relative;
+  padding: 0 !important;
 }
-.promotionPage .paginationParent span, .promotionPage .paginationParent a {
-  margin: 0;
-  text-decoration: none;
-  padding: 0;
-  line-height: 1;
-  font-size: 1em;
-  font-weight: 400;
-  padding: 0.5em;
-  min-width: 1em;
-  background-color: #fff;
-  border-radius: 5px !important;
-  padding: 5px 15px !important;
-  border: none !important;
-  margin-left: 5px !important;
-}
-.promotionPage .paginationParent .current {
-  background: #e9e6ed;
-  color: #816e99;
-}
-.promotionPage .paginationParent .next {
-  background: transparent !important;
+
+.elementor-background-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://pahlevanshop.com/wp-content/uploads/2021/01/percentage-pattern-1.png);
 }/*# sourceMappingURL=style-rtl.css.map */
