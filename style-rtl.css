@@ -2635,4 +2635,39 @@ ul.products li.product .price ins {
   height: 100%;
   width: 100%;
   background-image: url(https://pahlevanshop.com/wp-content/uploads/2021/01/percentage-pattern-1.png);
+}
+
+.kadinerPromotion .sectionHeader {
+  justify-content: flex-start;
+}
+.kadinerPromotion .kadinerSaleCountDown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .kadinerPromotion .kadinerSaleCountDown {
+    margin-right: 5px;
+  }
+}
+.kadinerPromotion .kadinerSaleCountDown .remainingText {
+  margin-left: 5px;
+}
+.kadinerPromotion .kadinerSaleCountDown .countDownNumber {
+  background-color: #fdcf00;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.kadinerPromotion .kadinerSaleCountDown .divider {
+  display: block;
+  margin: 0 5px;
+  font-size: 18px;
 }/*# sourceMappingURL=style-rtl.css.map */
