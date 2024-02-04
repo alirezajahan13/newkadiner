@@ -2147,3 +2147,35 @@ ul.products{
         }
     }
 }
+.promotionPageCountDownSec{
+    margin: 25px 0px;
+}
+.promotionPage{
+    .paginationParent{
+        text-align: right !important;
+        margin: 30px 0 !important;
+        span,a{
+            margin: 0;
+            text-decoration: none;
+            padding: 0;
+            line-height: 1;
+            font-size: 1em;
+            font-weight: 400;
+            padding: 0.5em;
+            min-width: 1em;
+            // display: block;
+            background-color: #fff;
+            border-radius: 5px !important;
+            padding: 5px 15px !important;
+            border: none !important;
+            margin-left: 5px !important;
+        }
+        .current{
+            background: #e9e6ed;
+            color: #816e99;
+        }
+        .next{
+            background: transparent !important;
+        }
+    }
+}

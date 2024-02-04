@@ -2670,4 +2670,66 @@ ul.products li.product .price ins {
   display: block;
   margin: 0 5px;
   font-size: 18px;
+}
+
+.promotionPageCountDownSec {
+  margin: 25px 0px;
+}
+
+.promotionPage .paginationParent {
+  text-align: right !important;
+  margin: 30px 0 !important;
+}
+.promotionPage .paginationParent span, .promotionPage .paginationParent a {
+  margin: 0;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.5em;
+  min-width: 1em;
+  background-color: #fff;
+  border-radius: 5px !important;
+  padding: 5px 15px !important;
+  border: none !important;
+  margin-left: 5px !important;
+}
+.promotionPage .paginationParent .current {
+  background: #e9e6ed;
+  color: #816e99;
+}
+.promotionPage .paginationParent .next {
+  background: transparent !important;
+}
+
+.promotionPageCountDownSec {
+  margin: 25px 0px;
+}
+
+.promotionPage .paginationParent {
+  text-align: right !important;
+  margin: 30px 0 !important;
+}
+.promotionPage .paginationParent span, .promotionPage .paginationParent a {
+  margin: 0;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.5em;
+  min-width: 1em;
+  background-color: #fff;
+  border-radius: 5px !important;
+  padding: 5px 15px !important;
+  border: none !important;
+  margin-left: 5px !important;
+}
+.promotionPage .paginationParent .current {
+  background: #e9e6ed;
+  color: #816e99;
+}
+.promotionPage .paginationParent .next {
+  background: transparent !important;
 }/*# sourceMappingURL=style-rtl.css.map */
